@@ -1,0 +1,11 @@
+.plus-button{
+  width: 32px;
+  height: 32px;
+  background: #D0D0D0;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+.plus-button:hover{
+  background-color: #7EA4E7;
+}

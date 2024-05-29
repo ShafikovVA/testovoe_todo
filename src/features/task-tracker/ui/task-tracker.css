@@ -1,0 +1,37 @@
+.task-tracker-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.task-tracker-container .actions {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #E9E9E9;
+}
+.task-tracker-container .actions .actions-text{
+  display: flex;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+.task-tracker-container .actions .button {
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 13px;
+  color: #3D4044;
+  border: none;
+  background: #C6D2E5;
+  border-radius: 4px;
+  width: 171px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.task-tracker-container .columns {
+  display: flex;
+  gap: 40px;
+}

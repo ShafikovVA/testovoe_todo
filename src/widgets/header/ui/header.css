@@ -1,0 +1,68 @@
+.header {
+  grid-column: span 2;
+  position: relative;
+  display: inline-block;
+  height: 80px;
+  background-color: #253F4B;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  padding: 0 24px 0 38px;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.header .logo {
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.header .navigation {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+.header .navigation .nav-item {
+  font-size: 16px;
+  font-weight: 600;
+  color: #B8B8B8;
+  cursor: pointer;
+}
+.header .navigation .nav-item.active {
+  color: #FFFFFF;
+  border-bottom: 2px solid #E96880;
+}
+
+.header .profile {
+  display: flex;
+  align-items: center;
+}
+.header .profile .balance {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #FFFFFF;
+  font-size: 16px;
+  margin-right: 24px;
+}
+.header .notifications {
+  margin-right: 40px;
+}
+.header .profile .user-info {
+  display: flex;
+  gap: 8px;
+}
+.header .profile .user-info .avatar {
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+}
+.header .profile .user-info .profile-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
