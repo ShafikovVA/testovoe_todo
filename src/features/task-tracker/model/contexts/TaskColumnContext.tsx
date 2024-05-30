@@ -1,15 +1,54 @@
-import { TrackerColumnProps } from '@/entities/tracker-column/ui/tracker-column';
-import { PinSvg } from './icons/pin-svg';
-import { PlayButtonSvg } from './icons/play-button-svg';
-import { DoneSvg } from './icons/done-svg';
-import { DoneOver } from './icons/done-over-svg';
 import { Task } from '@/entities/task';
-import Avatar1 from './images/avatar1.png';
-import Avatar2 from './images/avatar2.png';
+import { createContext, useContext } from 'react';
+import { PlayButtonSvg } from '../../ui/icons/play-button-svg';
+import { PinSvg } from '../../ui/icons/pin-svg';
+import { DoneSvg } from '../../ui/icons/done-svg';
+import { DoneOver } from '../../ui/icons/done-over-svg';
+import Avatar1 from '../../ui/images/avatar1.png';
+import Avatar2 from '../../ui/images/avatar2.png';
+import { TrackerColumnProps } from '@/entities/tracker-column';
 
-export const columnsData: TrackerColumnProps[] = [
+export const TasksColumnContext = createContext<TrackerColumnProps[] | null>(null);
+export const TasksColumnDispatchContext = createContext<React.Dispatch<TasksColumnReducerAction> | null>(null);
+
+export function useTasksColumns() {
+  return useContext(TasksColumnContext);
+}
+
+export function useTasksCulumnsDispatch() {
+  return useContext(TasksColumnDispatchContext);
+}
+
+interface TasksColumnReducerAction{
+  id?: number;
+  type: 'added' | 'deleted';
+}
+
+export function tasksReducer(tasks: TrackerColumnProps[], action: TasksColumnReducerAction) {
+  switch (action.type) {
+    case 'added': {
+      console.log(tasks[tasks.length - 1]);
+      return [...tasks, {
+        id: (tasks[tasks.length - 1] ? tasks[tasks.length - 1].id : 0) + 1,
+        title: 'Новая категория',
+        icon: <PinSvg />,
+      }] as TrackerColumnProps[];
+    }
+    case 'deleted': {
+      if (!action.id){
+        throw Error('Unexpected id');
+      }
+      return tasks.filter(taskColumn => taskColumn.id !== action.id);
+    }
+    default: {
+      throw Error('Unknown action: ' + action.type);
+    }
+  }
+}
+
+export const initialTasksData = [
   {
-    id: 0,
+    id: 1,
     title: 'Беклог',
     icon:  <PinSvg />,
     children: [
@@ -19,7 +58,7 @@ export const columnsData: TrackerColumnProps[] = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     title: 'В работе',
     icon:  <PlayButtonSvg />,
     children: [
@@ -28,7 +67,7 @@ export const columnsData: TrackerColumnProps[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: 'Выполнена',
     icon:  <DoneSvg />,
     children: [
@@ -41,7 +80,7 @@ export const columnsData: TrackerColumnProps[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: 'Сдана',
     icon:  <DoneOver />,
     children: [
@@ -49,7 +88,6 @@ export const columnsData: TrackerColumnProps[] = [
       <Task id={20413} title={'Статистика по икочникам звонка'} images={[Avatar1, Avatar2]} />,
       <Task id={20413} title={'Добавить график к статистике пользователей (количества регистраций)'} images={[Avatar1, Avatar2]} />,
       <Task id={20413} title={'Создать тестовую сборку сервиса ( для обработки нововведений )'} images={[Avatar1, Avatar2]} />,
-
     ],
   },
 ];

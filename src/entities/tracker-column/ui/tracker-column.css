@@ -9,11 +9,20 @@
 }
 .task-tracker-container .columns .column .column-header .left-block{
   display: flex;
+  align-items: center;
   gap: 8px;
 }
 .task-tracker-container .columns .column .column-header .right-block{
   display: flex;
+  align-self: center;
   gap: 8px;
+}
+.task-tracker-container .columns .column .column-header .right-block .button{
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  background-color: transparent;
 }
 
 .task-tracker-container .columns .column .task-list{
@@ -21,4 +30,5 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  margin-bottom: 10px;
 }

@@ -1,17 +1,25 @@
+import { useRef } from 'react';
 import './task.css'
 import { ArrowsSvg } from './icons/arrows-svg';
+
 
 export interface TaskProps {
   id: number;
   title: string;
   images: string[];
   completed?: boolean;
+  isDragged?: boolean;
 }
 
 export const Task = (props: TaskProps) => {
   const { id, title, images, completed } = props;
+  const taskRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className='task'>
+    <div
+      ref={taskRef}
+      className={`task`}
+    >
       <div className='task-header'>
         <div className="avatar">
           {
@@ -22,7 +30,7 @@ export const Task = (props: TaskProps) => {
         </div>
         <ArrowsSvg />
       </div>
-      <div className={`task-content ${completed && 'completed'}`}>
+      <div className={`task-content ${completed ? 'completed' : ''}`}>
         <span className='identify'>#{id}:</span> {title}
       </div>
     </div>

@@ -4,6 +4,10 @@
   height: 118px;
   width: 100%;
 }
+.task.dragged {
+  position: absolute;
+  z-index: 1000;
+}
 .task .task-header {
   min-width: 64px;
   background: #EFEFEF;
