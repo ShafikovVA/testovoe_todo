@@ -25,7 +25,7 @@ interface TasksColumnReducerAction{
   type: 'added' | 'changed' | 'deleted';
 }
 
-export function tasksReducer(tasks: TrackerColumnProps[], action: TasksColumnReducerAction) {
+export const tasksReducer = (tasks: TrackerColumnProps[], action: TasksColumnReducerAction) => {
   switch (action.type) {
     case 'added': {
       console.log(tasks[tasks.length - 1]);
@@ -40,7 +40,7 @@ export function tasksReducer(tasks: TrackerColumnProps[], action: TasksColumnRed
         throw Error('Unexpected id and task');
       }
       const checkNoChanges = tasks.find((taskColumn)  => taskColumn.tasks?.find((task) => action.task && task.id ===  action.task.id) )?.id === action.id;
-      const newTasks: TrackerColumnProps[] = !checkNoChanges ? tasks.map((taskColumn) => (
+      const newTasks = !checkNoChanges ? tasks.map((taskColumn) => (
         taskColumn.id === action.id ? {
           ...taskColumn,
           tasks: taskColumn.tasks && action.task ?
@@ -54,7 +54,7 @@ export function tasksReducer(tasks: TrackerColumnProps[], action: TasksColumnRed
         }
       )
     ) : tasks;
-      return newTasks;
+      return newTasks as TrackerColumnProps[];
     }
     case 'deleted': {
       if (!action.id){
