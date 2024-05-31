@@ -7,8 +7,8 @@ export interface ContentProps {
 
 export const Content = ({children}: ContentProps) => {
   return (
-    <div className="content">
+    <main className="content">
       {children}
-    </div>
+    </main>
   )
 }

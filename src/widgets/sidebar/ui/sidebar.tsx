@@ -5,11 +5,11 @@ import { QuestionSvg } from './icons/question-svg';
 import './sidebar.css';
 
 export const Sidebar = () => (
-  <div className='sidebar'>
+  <aside className='sidebar'>
     <div className="actions">
-      <LupaSvg />
-      <PlusSvg />
-      <CubesSvg />
+      <button className='action-button'><LupaSvg /></button>
+      <button className='action-button'><PlusSvg /></button>
+      <button className='action-button'><CubesSvg /></button>
     </div>
 
     <div className="sidebar-button">
@@ -18,7 +18,7 @@ export const Sidebar = () => (
       </svg>
     </div>
     <div className="info">
-      <QuestionSvg />
+      <button className='info-button'><QuestionSvg /></button>
     </div>
-  </div>
+  </aside>
 )

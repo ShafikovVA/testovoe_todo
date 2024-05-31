@@ -2,7 +2,7 @@
   grid-column: span 2;
   position: relative;
   display: inline-block;
-  height: 80px;
+  min-height: 80px;
   background-color: #253F4B;
   color: #FFFFFF;
   display: flex;
@@ -32,6 +32,9 @@
   color: #B8B8B8;
   cursor: pointer;
 }
+.header .navigation .nav-item:hover {
+  color: #FFFFFF;
+}
 .header .navigation .nav-item.active {
   color: #FFFFFF;
   border-bottom: 2px solid #E96880;
@@ -52,6 +55,18 @@
 .header .notifications {
   margin-right: 40px;
 }
+.header .notifications .notification-button {
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  color: #B8B8B8;
+}
+.header .notifications .notification-button:hover {
+  color: #FFFFFF;
+}
 .header .profile .user-info {
   display: flex;
   gap: 8px;
@@ -65,4 +80,5 @@
   display: flex;
   align-items: center;
   gap: 7px;
+  cursor: pointer;
 }

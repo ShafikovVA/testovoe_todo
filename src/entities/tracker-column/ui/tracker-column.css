@@ -1,6 +1,9 @@
 .task-tracker-container .columns .column {
   width: 290px;
-  min-width: 140px;
+  min-width: 240px;
+}
+.task-tracker-container.over{
+  border-left: 2px solid #5C81C2;
 }
 .task-tracker-container .columns .column .column-header{
   display: flex;

@@ -1,8 +1,10 @@
 .task-tracker-container {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 25px;
+  overflow: hidden;
 }
 
 .task-tracker-container .actions {
@@ -34,4 +36,8 @@
 .task-tracker-container .columns {
   display: flex;
   gap: 40px;
+  overflow: auto;
+  scrollbar-width: thin;
+  padding: 10px;
+  height: calc(100% - 200px);
 }

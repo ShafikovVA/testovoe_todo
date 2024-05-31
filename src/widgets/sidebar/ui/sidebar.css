@@ -17,7 +17,18 @@
   gap: 20px;
 }
 
+.sidebar .actions .action-button{
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+
 .sidebar .sidebar-button {
+  cursor: pointer;
   position: absolute;
   right: -40px;
   margin-top: auto;
@@ -38,5 +49,11 @@
 .sidebar .info {
   display: flex;
   justify-content: center;
+}
+.sidebar .info .info-button {
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 

@@ -1,6 +1,5 @@
 .content {
-  width: 100%;
-  height: inherit;
+  width: 100vw;
   display: flex;
   flex-grow: 1;
   /* display: grid;

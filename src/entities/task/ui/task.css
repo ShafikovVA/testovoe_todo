@@ -36,7 +36,9 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 18px;
-  color: #3e65be
+  color: #3e65be;
+  overflow: auto;
+  scrollbar-width: thin;
 }
 .task .task-content .identify {
   color: #3D4044

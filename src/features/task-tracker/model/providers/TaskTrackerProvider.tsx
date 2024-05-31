@@ -6,7 +6,6 @@ export function TasksTrackerProvider({ children }: {children: ReactNode}) {
     tasksReducer,
     initialTasksData
   );
-  console.log(tasks);
   return (
     <TasksColumnContext.Provider value={tasks}>
       <TasksColumnDispatchContext.Provider value={dispatch}>
