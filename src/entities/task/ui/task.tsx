@@ -18,7 +18,7 @@ export interface TaskDraggableArguments {
 }
 
 export const Task = (props: TaskProps) => {
-  const { id, title, images, completed } = props;
+  const { id, titleId, title, images, completed } = props;
 
   const {attributes, listeners, setNodeRef, transform} = useDraggable({
     id: id,
@@ -50,7 +50,7 @@ export const Task = (props: TaskProps) => {
         <ArrowsSvg />
       </div>
       <div className={`task-content ${completed ? 'completed' : ''}`}>
-        <span className='identify'>#{id}:</span> {title}
+        <span className='identify'>#{titleId}:</span> {title}
       </div>
     </div>
   )

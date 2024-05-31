@@ -5,6 +5,7 @@
   color: #FFFFFF;
   border: none;
   cursor: pointer;
+  margin-bottom: 5px;
 }
 .plus-button:hover{
   background-color: #7EA4E7;
